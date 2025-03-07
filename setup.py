@@ -2,12 +2,17 @@ from setuptools import setup, find_packages
 
 setup(
     name="adformat",
-    version="1",
+    version="1.01",
     packages=find_packages(),
     install_requires=[
         "colorama",
         "wmi",
     ],
+    entry_points={
+        "console_scripts": [
+            "adformat=adformat.ADFormat:main",
+        ],
+    },
     author="ARnoLD Digital",
     author_email="arnold_digital@yandex.ru",
     description="Formats multiply USB disks at once",
