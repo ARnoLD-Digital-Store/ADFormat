@@ -101,7 +101,10 @@ def main() -> None:
 
     cls()
     print(green("[...] Formating"))
-    processes: list[Popen[str]] = [format_disk(disk) for disk in disks]
+    processes: list[Popen[str]] = []
+    for disk in disks:
+        processes.append(format_disk(disk))
+        time.sleep(2)
     for process in processes:
         process.wait()
     print(green("[*] Done!"))
